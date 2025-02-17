@@ -1,5 +1,8 @@
+from uuid import uuid4
+
 class Product:
     def __init__(self, name, price, quantity):
+        self.__id = uuid4()
         self.name = name
         self.price = price
         self.quantity = quantity
@@ -18,6 +21,8 @@ class Product:
         self.quantity += amount
         return f"Omborga {amount}ta mahsulot qo'shildi. Yangi miqdor: {self.quantity}"
 
+    def get_id(self):
+        return f"Mahsulot ID:{self.__id}"
 
 class Electronics(Product):
     def __init__(self, name, price, quantity, warranty):
@@ -48,16 +53,17 @@ class Food(Product):
 phone = Electronics("Iphone 15pro", "10.000.000"  , 30, "1year")
 print(phone.info())
 print(phone.sell(6))
-
-
+print(phone.get_id())
 
 hotdog = Food("Hot dog","15.000", 20, "1day")
 print(hotdog.info())
 print(hotdog.sell(5))
+print(hotdog.get_id())
 
 
 class Basket(Product):
     def __init__(self):
+        self.__id = uuid4()
         self.products = []
 
     def add(self, product):
@@ -92,3 +98,17 @@ class Basket(Product):
         self.products2 = self.products.copy()
         return f"Mahsulotlar 2chi savatga qo'shildi: {self.products2}"
 
+
+ = Electronics("Laptop", 1200, 10, 2)
+print()
+print()
+print()
+print()
+
+
+
+banana = Food("Banana",5000, 100, "3kun")
+print(banana.info())
+print(banana.sell(10))
+print(banana.restock(20))
+print(banana.get_id())
