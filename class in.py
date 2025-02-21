@@ -47,28 +47,67 @@
 # while count > 0:
 #     print(k * count)
 #     count -= 1
+################################################################
+# from uuid import uuid4
+#
+# class Avto:
+#     def __init__(self,name , year ):
+#         self.__id = uuid4()
+#         self.name = name
+#         self.year = year
+#         self.__km = 0
+#
+#     def get_km(self):
+#         return f"Probeg:{self.__km}"
+#
+#     def get_id(self):
+#         return f"Avtomobil ID:{self.__id} "
+#
+#
+# a = Avto("Gentra", 2024)
+# a.__km = 1000
+# a.familiya = "Baxtiyorov"
+#
+# print(a.name , a.year)
+# print(a.get_km())
+# print(a.familiya)
+# print(a.get_id())
 
-from uuid import uuid4
-
-class Avto:
-    def __init__(self,name , year ):
-        self.__id = uuid4()
-        self.name = name
-        self.year = year
-        self.__km = 0
-
-    def get_km(self):
-        return f"Probeg:{self.__km}"
-
-    def get_id(self):
-        return f"Avtomobil ID:{self.__id} "
+#################################################################
 
 
-a = Avto("Gentra", 2024)
-a.__km = 1000
-a.familiya = "Baxtiyorov"
+# class Math:
+#     def add(self , a , b):
+#         return a + b
+#
+#     def add(self , a , b , c):
+#         return a + b + c
+#
+#
+# m = Math()
+# print(m.add( 2 , 3 , 5))
 
-print(a.name , a.year)
-print(a.get_km())
-print(a.familiya)
-print(a.get_id())
+
+##################################################################
+
+#
+# from abc import  ABC , abstractmethod
+#
+#
+# class Person(ABC):
+#     @abstractmethod
+#     def speak(self):
+#         pass
+#
+#
+# class English(Person):
+#     def speak(self):
+#         print("I can speak")
+#
+#
+# e = English()
+# e.speak()
+
+#####################################################################
+
+from abc import ABC
