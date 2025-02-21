@@ -84,7 +84,25 @@ class Direktor(Person):
     def get_role(self):
         return "Direktor(Manager)"
 
+class Cafeteria:
+    def __init__(self, name, chef, capacity):
+        self.name = name
+        self.chef = chef
+        self.capacity = capacity
+        self.menu = []
 
+    def add_food(self, food):
+        self.menu.append(food)
+        return f"{food} has been added to the menu."
+
+    def show_menu(self):
+        return f"Menu in {self.name}: {', '.join(self.menu) if self.menu else 'No food available'}"
+
+    def serve_food(self):
+        return f"{self.chef} is serving food to students."
+
+    def get_info(self):
+        return f"{self.name} is managed by {self.chef} and can accommodate {self.capacity} people."
 
 school = School("PDP school")
 classroom1 = Classroom(27, "English")
@@ -92,10 +110,10 @@ student1 = Student("Badriddin",  "Baxtiyorov", 17 , 5)
 teacher1 = Teacher("SHaxlo", "Askarova" , 30, "English")
 school.add_person(teacher1)
 school.add_person(student1)
-
+cafeteria1 = Cafeteria("Sunrise Cafeteria", "Chef Umar", 100)
+director1 = Direktor("Asliddin", "Ismoilov", 25)
+print(director1.get_info())
 print()
-print()
-print()
-print()
-print()
-print()
+print(cafeteria1.get_info())
+print(cafeteria1.add_food("Pizza"))
+print(cafeteria1.add_food("Soup"))
